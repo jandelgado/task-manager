@@ -24,7 +24,7 @@ primary_region = 'fra'
 
 [checks]
   [checks.health]
-    grace_period = "10s"
+    grace_period = "45s"
     interval = "30s"
     method = "GET"
     path = "/api/tasks"
