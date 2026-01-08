@@ -3,7 +3,8 @@
     "jdk@21",
     "nodejs@24",
     "hurl@6",
-    "just@latest"
+    "just@latest",
+    "flyctl@latest"
   ],
   "shell": {
     "init_hook": [
