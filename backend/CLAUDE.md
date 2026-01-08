@@ -40,16 +40,17 @@ This project uses [Devbox](https://www.jetify.com/devbox) to manage Java and oth
    curl -fsSL https://get.jetify.com/devbox | bash
    ```
 
-2. Initialize the Devbox environment:
+2. Initialize the Devbox environment from the **project root**:
    ```bash
+   cd /path/to/task-manager
    devbox shell
    ```
 
-The `devbox.json` file configures Java 21 automatically.
+The `devbox.json` file at the project root configures Java 21, Node.js, and Hurl automatically.
 
 ## Commands
 
-All commands should be run inside the Devbox shell (`devbox shell`):
+All commands should be run inside the Devbox shell (run `devbox shell` from project root):
 
 - `./gradlew bootRun` - Run application
 - `./gradlew test` - Run tests

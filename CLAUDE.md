@@ -10,13 +10,15 @@ A full-stack task management application.
 
 ## Getting Started
 
+This project uses Devbox to manage all development dependencies (Java, Node.js, Hurl).
+
 ### Backend
 
-The backend uses Devbox to manage Java dependencies. First, enter the Devbox shell:
+First, enter the Devbox shell from the project root:
 
 ```bash
-cd backend && devbox shell
-./gradlew bootRun
+devbox shell
+cd backend && ./gradlew bootRun
 ```
 Runs on http://localhost:8080
 

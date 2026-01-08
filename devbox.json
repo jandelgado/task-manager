@@ -1,0 +1,16 @@
+{
+  "packages": [
+    "jdk@21",
+    "nodejs@24",
+    "hurl@6",
+    "just@latest"
+  ],
+  "shell": {
+    "init_hook": [
+      "echo 'Development environment ready'",
+      "echo 'Java:' && java -version",
+      "echo 'Node:' && node --version",
+      "echo 'npm:' && npm --version"
+    ]
+  }
+}

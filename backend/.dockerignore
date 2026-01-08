@@ -1,0 +1,33 @@
+# Build artifacts
+.gradle/
+build/
+!build/libs/*.jar
+target/
+out/
+
+# Development files
+.devbox/
+*.md
+hurl/
+
+# Test files
+src/test/
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Gradle wrapper (not needed, already in image)
+gradlew.bat
