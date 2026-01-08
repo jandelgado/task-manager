@@ -1,3 +1,141 @@
+# Backup files
 *~
 *.bak
+*.swp
+*.swo
 
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# IDE - IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# IDE - Eclipse
+.classpath
+.project
+.settings/
+bin/
+
+# IDE - VSCode
+.vscode/
+*.code-workspace
+
+# IDE - NetBeans
+nbproject/
+nbbuild/
+nbdist/
+.nb-gradle/
+
+# Java/Gradle Backend
+backend/build/
+backend/.gradle/
+backend/gradle-app.setting
+backend/.gradletasknamecache
+backend/out/
+backend/target/
+
+# Gradle wrapper JAR (keep gradle-wrapper.properties)
+!backend/gradle/wrapper/gradle-wrapper.jar
+
+# Spring Boot
+backend/spring.log
+backend/*.log
+
+# Test reports
+backend/build/reports/
+backend/build/test-results/
+
+# Node.js/npm Frontend (for future use)
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.next/
+frontend/.nuxt/
+frontend/.cache/
+frontend/.parcel-cache/
+frontend/.vite/
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/pnpm-debug.log*
+frontend/.pnp
+frontend/.pnp.js
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+.envrc
+
+# Devbox
+.devbox/
+backend/.devbox/
+
+# Claude Code
+.claude/
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+tmp/
+
+# Coverage reports
+coverage/
+*.lcov
+.nyc_output/
+
+# Build artifacts
+*.jar
+*.war
+*.ear
+*.class
+
+# Package Files
+*.nar
+*.tar.gz
+*.zip
+*.rar
+
+# Virtual machine crash logs
+hs_err_pid*
+
+# macOS
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.TemporaryItems
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk

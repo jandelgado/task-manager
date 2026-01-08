@@ -5,15 +5,18 @@ A full-stack task management application.
 ## Project Structure
 
 - `/frontend` - React + TypeScript + Vite application
-- `/backend` - Spring Boot + Java 25 + Gradle application
+- `/backend` - Spring Boot + Java 21 + Gradle application
 - `/docs` - Specifications and documentation
 
 ## Getting Started
 
 ### Backend
 
+The backend uses Devbox to manage Java dependencies. First, enter the Devbox shell:
+
 ```bash
-cd backend && ./gradlew bootRun
+cd backend && devbox shell
+./gradlew bootRun
 ```
 Runs on http://localhost:8080
 

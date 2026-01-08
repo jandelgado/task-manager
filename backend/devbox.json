@@ -1,0 +1,12 @@
+{
+  "packages": [
+    "jdk",
+    "hurl"
+  ],
+  "shell": {
+    "init_hook": [
+      "echo 'Java environment ready'",
+      "java -version"
+    ]
+  }
+}

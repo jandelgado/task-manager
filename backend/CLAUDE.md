@@ -29,7 +29,27 @@ com.taskmanager
 - Use ResponseEntity for HTTP responses
 - CORS enabled for http://localhost:5173
 
+## Development Environment
+
+This project uses [Devbox](https://www.jetify.com/devbox) to manage Java and other dependencies.
+
+### Setup
+
+1. Install Devbox (if not already installed):
+   ```bash
+   curl -fsSL https://get.jetify.com/devbox | bash
+   ```
+
+2. Initialize the Devbox environment:
+   ```bash
+   devbox shell
+   ```
+
+The `devbox.json` file configures Java 21 automatically.
+
 ## Commands
+
+All commands should be run inside the Devbox shell (`devbox shell`):
 
 - `./gradlew bootRun` - Run application
 - `./gradlew test` - Run tests
