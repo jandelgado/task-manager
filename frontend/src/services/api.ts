@@ -1,6 +1,7 @@
 import { Task } from '../types/task';
 
-const API_BASE_URL = '/api';
+// Use environment variable for API URL, fallback to /api for local development with Vite proxy
+const API_BASE_URL = import.meta.env.VITE_API_URL || '/api';
 
 class ApiError extends Error {
   constructor(
