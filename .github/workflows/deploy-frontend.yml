@@ -31,4 +31,4 @@ jobs:
         run: npm install --global vercel@latest
 
       - name: Deploy to Vercel
-        run: vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }} --build-env VITE_API_URL="${{ secrets.VITE_API_URL }}" --cwd ./frontend
+        run: vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }} --build-env VITE_API_URL="${{ secrets.VITE_API_URL }}"
