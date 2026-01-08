@@ -1,4 +1,4 @@
-# Task Manager
+# Experimenting with claude code: The Task Manager
 
 A full-stack task management application built with React, TypeScript, Vite, Spring Boot, and Java.
 
@@ -21,12 +21,14 @@ Task Manager is a modern web application that allows users to create, update, an
 ### Tech Stack
 
 **Frontend:**
+
 - React 18 with TypeScript
 - Vite (build tool and dev server)
 - TailwindCSS (styling)
 - Fetch API (HTTP client)
 
 **Backend:**
+
 - Spring Boot 3.5
 - Java 21
 - Spring Data JPA
@@ -34,6 +36,7 @@ Task Manager is a modern web application that allows users to create, update, an
 - Gradle (build tool)
 
 **Testing:**
+
 - JUnit 5 & Mockito (backend unit tests)
 - Hurl (manual API testing)
 
@@ -74,11 +77,13 @@ task-manager/
 ### Environment Variables
 
 **Frontend (`frontend/.env.production`):**
+
 ```bash
 VITE_API_URL=http://localhost:8080/api  # Backend API URL
 ```
 
 **Backend (`backend/src/main/resources/application.properties`):**
+
 ```properties
 server.port=8080
 spring.datasource.url=jdbc:h2:mem:taskdb
@@ -105,17 +110,20 @@ This project uses [Devbox](https://www.jetify.com/devbox) to manage development 
 #### Setup with Devbox (Recommended)
 
 1. **Install Devbox** (if not already installed):
+
    ```bash
    curl -fsSL https://get.jetify.com/devbox | bash
    ```
 
 2. **Clone the repository** (if you haven't already):
+
    ```bash
    git clone <repository-url>
    cd task-manager
    ```
 
 3. **Enter Devbox shell** (installs all dependencies automatically):
+
    ```bash
    devbox shell
    ```
@@ -129,16 +137,19 @@ This project uses [Devbox](https://www.jetify.com/devbox) to manage development 
 #### Running the Backend
 
 1. **Navigate to backend directory**:
+
    ```bash
    cd backend
    ```
 
 2. **Run the application** (with Devbox):
+
    ```bash
    ./gradlew bootRun
    ```
 
    Or without Devbox (requires Java 21):
+
    ```bash
    ./gradlew bootRun
    ```
@@ -153,16 +164,19 @@ This project uses [Devbox](https://www.jetify.com/devbox) to manage development 
 #### Running the Frontend
 
 1. **Open a new terminal** and navigate to frontend:
+
    ```bash
    cd frontend
    ```
 
 2. **Install dependencies** (first time only):
+
    ```bash
    npm install
    ```
 
 3. **Start the development server**:
+
    ```bash
    npm run dev
    ```
@@ -174,6 +188,7 @@ This project uses [Devbox](https://www.jetify.com/devbox) to manage development 
 **Alternative with Just:**
 
 You can use the `just` task runner for common operations:
+
 - `just backend` - Start backend server
 - `just frontend` - Start frontend dev server
 - `just install` - Install all dependencies
@@ -252,22 +267,26 @@ This section covers deploying the frontend to Vercel and the backend to Fly.io.
 ##### Option 2: Deploy via Vercel CLI
 
 1. **Install Vercel CLI**:
+
    ```bash
    npm install -g vercel
    ```
 
 2. **Navigate to frontend** and login:
+
    ```bash
    cd frontend
    vercel login
    ```
 
 3. **Deploy**:
+
    ```bash
    vercel
    ```
 
 4. **Set environment variable**:
+
    ```bash
    vercel env add VITE_API_URL
    # Enter: https://your-backend-app.fly.dev/api
@@ -283,7 +302,7 @@ This section covers deploying the frontend to Vercel and the backend to Fly.io.
 Update `frontend/src/services/api.ts` to use environment variable:
 
 ```typescript
-const API_BASE_URL = import.meta.env.VITE_API_URL || '/api';
+const API_BASE_URL = import.meta.env.VITE_API_URL || "/api";
 ```
 
 Then create `frontend/.env.production`:
@@ -324,11 +343,13 @@ public void addCorsMappings(CorsRegistry registry) {
 ##### Install Fly CLI
 
 **macOS/Linux**:
+
 ```bash
 curl -L https://fly.io/install.sh | sh
 ```
 
 **Windows** (PowerShell):
+
 ```powershell
 iwr https://fly.io/install.ps1 -useb | iex
 ```
@@ -336,16 +357,19 @@ iwr https://fly.io/install.ps1 -useb | iex
 ##### Deploy Steps
 
 1. **Login to Fly.io**:
+
    ```bash
    fly auth login
    ```
 
 2. **Navigate to backend**:
+
    ```bash
    cd backend
    ```
 
 3. **Launch the app** (uses existing `Dockerfile`):
+
    ```bash
    fly launch
    ```
@@ -383,26 +407,31 @@ iwr https://fly.io/install.ps1 -useb | iex
    ```
 
 5. **Build the JAR locally** (optional, Docker will do this):
+
    ```bash
    ./gradlew bootJar
    ```
 
 6. **Deploy the application**:
+
    ```bash
    fly deploy
    ```
 
 7. **Check deployment status**:
+
    ```bash
    fly status
    ```
 
 8. **View logs**:
+
    ```bash
    fly logs
    ```
 
 9. **Open the application**:
+
    ```bash
    fly open
    ```
@@ -412,6 +441,7 @@ iwr https://fly.io/install.ps1 -useb | iex
 ##### Database Considerations
 
 **Development (Current Setup):**
+
 - Uses H2 in-memory database
 - Data is lost when app restarts
 - ⚠️ **Not recommended for production**
@@ -421,11 +451,13 @@ iwr https://fly.io/install.ps1 -useb | iex
 Upgrade to PostgreSQL on Fly.io:
 
 1. **Create Postgres cluster**:
+
    ```bash
    fly postgres create
    ```
 
 2. **Attach to your app**:
+
    ```bash
    fly postgres attach <postgres-app-name>
    ```
@@ -433,6 +465,7 @@ Upgrade to PostgreSQL on Fly.io:
 3. **Update `application.properties`** for production:
 
    Create `src/main/resources/application-prod.properties`:
+
    ```properties
    spring.datasource.url=${DATABASE_URL}
    spring.datasource.driver-class-name=org.postgresql.Driver
@@ -441,6 +474,7 @@ Upgrade to PostgreSQL on Fly.io:
    ```
 
 4. **Add PostgreSQL dependency** to `build.gradle.kts`:
+
    ```kotlin
    runtimeOnly("org.postgresql:postgresql")
    ```
@@ -490,7 +524,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'backend/**'
+      - "backend/**"
 
 jobs:
   deploy:
@@ -513,6 +547,7 @@ jobs:
 Before going to production, ensure you've completed:
 
 #### Backend
+
 - [ ] Switch from H2 to PostgreSQL database
 - [ ] Set proper CORS origins (not `*`)
 - [ ] Configure environment-specific properties
@@ -525,6 +560,7 @@ Before going to production, ensure you've completed:
 - [ ] Configure health checks
 
 #### Frontend
+
 - [ ] Set `VITE_API_URL` to production backend
 - [ ] Test all features with production API
 - [ ] Verify CORS is working
@@ -535,6 +571,7 @@ Before going to production, ensure you've completed:
 - [ ] Set up error tracking (e.g., Sentry)
 
 #### DevOps
+
 - [ ] Set up CI/CD pipeline
 - [ ] Configure automated tests in CI
 - [ ] Set up staging environment
@@ -563,6 +600,7 @@ cd backend
 ```
 
 Test coverage:
+
 - Service layer: 100% (12 tests)
 - Controller layer: 95%+ (17 tests)
 - Repository layer: 80%+ (10 tests)
@@ -669,6 +707,7 @@ This project is for educational purposes.
 ## Support
 
 For issues or questions:
+
 - Check the documentation in `/frontend`, `/backend`, and `/docs`
 - Review the [API Specification](docs/SPEC.md)
 - Look at existing [Hurl tests](backend/hurl/) for API examples
