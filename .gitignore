@@ -56,7 +56,7 @@ backend/*.log
 backend/build/reports/
 backend/build/test-results/
 
-# Node.js/npm Frontend (for future use)
+# Node.js/npm Frontend
 frontend/node_modules/
 frontend/dist/
 frontend/build/
@@ -71,6 +71,8 @@ frontend/yarn-error.log*
 frontend/pnpm-debug.log*
 frontend/.pnp
 frontend/.pnp.js
+frontend/.eslintcache
+frontend/tsconfig.tsbuildinfo
 
 # Environment variables
 .env
